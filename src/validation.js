@@ -9,5 +9,4 @@ function isCartItem(maybeCartItem) {}
 
 function isProduct(maybeProduct) {}
 
-
-export { isCartItem, isProduct }
+export { isCartItem, isProduct };
