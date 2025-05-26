@@ -7,6 +7,12 @@
 
 function isCartItem(maybeCartItem) {}
 
-function isProduct(maybeProduct) {}
+function isProduct(maybeProduct) {
+  return (
+    typeof maybeProduct.id === "number" &&
+    typeof maybeProduct.name === "string" &&
+    typeof maybeProduct.price === "number"
+  );
+}
 
 export { isCartItem, isProduct };
