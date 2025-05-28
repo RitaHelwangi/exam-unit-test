@@ -34,4 +34,14 @@ describe("Cart", () => {
     const item = getItem(0);
     expect(item.item.name).toBe("Strandboll");
   });
+
+  test("getTottalCartValue returns correct total value of the cart", () => {
+    const product1 = { id: 1004, name: "Badhandduk", price: 100 };
+    const product2 = { id: 1005, name: "Solkräm", price: 50 };
+    addToCart(product1);
+    addToCart(product2);
+
+    const totalValue = getTotalCartValue();
+    expect(totalValue).toBe(150); // 100 + 50
+  });
 });
