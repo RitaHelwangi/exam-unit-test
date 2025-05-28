@@ -9,6 +9,8 @@ function isCartItem(maybeCartItem) {}
 
 function isProduct(maybeProduct) {
   return (
+    typeof maybeProduct === "object" &&
+    maybeProduct !== null &&
     typeof maybeProduct.id === "number" &&
     typeof maybeProduct.name === "string" &&
     typeof maybeProduct.price === "number"

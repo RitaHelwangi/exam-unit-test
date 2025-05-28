@@ -40,4 +40,8 @@ function addToCart(newItem) {
   cart.push(cartItem);
 }
 
-export { getCartItemCount, addToCart };
+function clearCart() {
+  cart.length = 0;
+}
+
+export { getCartItemCount, addToCart, clearCart };
