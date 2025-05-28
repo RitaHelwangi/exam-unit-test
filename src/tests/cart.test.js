@@ -6,6 +6,7 @@ import {
   getItem,
   getTotalCartValue,
   removeFromCart,
+  editCart,
 } from "../cart";
 
 describe("Cart", () => {
