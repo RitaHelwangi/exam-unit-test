@@ -51,4 +51,18 @@ function getItem(index) {
 function getTotalCartValue() {
   return cart.reduce((total, item) => total + item.item.price * item.amount, 0);
 }
-export { getCartItemCount, addToCart, clearCart, getItem, getTotalCartValue };
+
+function removeFromCart(productId) {
+  const index = cart.findIndex((cartItem) => cartItem.item.id === productId);
+  if (index !== -1) {
+    cart.splice(index, 1);
+  }
+}
+export {
+  getCartItemCount,
+  addToCart,
+  clearCart,
+  getItem,
+  getTotalCartValue,
+  removeFromCart,
+};
