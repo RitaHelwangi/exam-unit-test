@@ -27,4 +27,11 @@ describe("Cart", () => {
     const itemCountAfter = getCartItemCount();
     expect(itemCountAfter).toBe(itemCountBefore);
   });
+
+  test("getItem returns the cart item at the given index", () => {
+    const product = { id: 1003, name: "Strandboll", price: 30 };
+    addToCart(product);
+    const item = getItem(0);
+    expect(item.item.name).toBe("Strandboll");
+  });
 });

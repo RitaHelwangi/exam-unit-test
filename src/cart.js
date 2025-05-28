@@ -27,7 +27,7 @@ let idCounter = 2002;
 // Du får en funktion att börja med
 
 function getCartItemCount() {
-  return cart.length;
+  return cart.reduce((count, item) => count + item.amount, 0);
 }
 
 function addToCart(newItem) {
