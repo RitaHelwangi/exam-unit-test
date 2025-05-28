@@ -18,7 +18,7 @@ describe("Validation", () => {
   // 2. it returns false for invalid cart objects
 
   // 3. it returns true for a valid product
-  // 4. it returns false for invalid cart objects
+  // 4. it returns false for invalid cart objectskan
   describe("isProduct", () => {
     test("isProduct returns true for a valid product object", () => {
       const result = isProduct(exampleProduct);
@@ -29,6 +29,12 @@ describe("Validation", () => {
       const invalidProduct = { name: "Missing price and id" };
       const result = isProduct(invalidProduct);
       expect(result).toBe(false);
+    });
+  });
+  describe("isCartItem", () => {
+    test("isCartItem returns true for a valid cart item object", () => {
+      const result = isCartItem(exampleCartObject);
+      expect(result).toBe(true);
     });
   });
 });
