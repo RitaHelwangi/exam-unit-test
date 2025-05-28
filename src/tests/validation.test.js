@@ -42,5 +42,15 @@ describe("Validation", () => {
       const result = isCartItem(invalidCartItem);
       expect(result).toBe(false);
     });
+
+    test("isCartItem returns false for an invalid product in cart item", () => {
+      const invalidCartItem = {
+        id: 2001,
+        amount: 1,
+        item: { id: 1001, name: "Invalid Product" }, // Missing 'price'
+      };
+      const result = isCartItem(invalidCartItem);
+      expect(result).toBe(false);
+    });
   });
 });

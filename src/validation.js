@@ -10,8 +10,8 @@ function isCartItem(maybeCartItem) {
     typeof maybeCartItem === "object" &&
     maybeCartItem !== null &&
     typeof maybeCartItem.id === "number" &&
-    typeof maybeCartItem.amount === "number" &&
-    isProduct(maybeCartItem.item)
+    typeof maybeCartItem.amount === "number"
+    // isProduct(maybeCartItem.item)
   );
 }
 
