@@ -44,4 +44,8 @@ function clearCart() {
   cart.length = 0;
 }
 
-export { getCartItemCount, addToCart, clearCart };
+function getItem(index) {
+  return cart[index];
+}
+
+export { getCartItemCount, addToCart, clearCart, getItem };

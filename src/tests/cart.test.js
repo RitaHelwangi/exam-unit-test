@@ -1,5 +1,5 @@
 // importera här
-import { addToCart, getCartItemCount, clearCart } from "../cart";
+import { addToCart, getCartItemCount, clearCart, getItem } from "../cart";
 
 describe("Cart", () => {
   beforeEach(() => {
