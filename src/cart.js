@@ -27,7 +27,7 @@ let idCounter = 2002;
 // Du får en funktion att börja med
 
 function getCartItemCount() {
-  throw new Error("TODO");
+  return cart.length;
 }
 
 function addToCart(newItem) {
