@@ -68,6 +68,12 @@ describe("Cart", () => {
         const itemCountAfter = getCartItemCount();
         expect(itemCountAfter).toBe(itemCountBefore - 1);
       });
+      test("removeFromCart does nothing if the item is not in the cart", () => {
+        const itemCountBefore = getCartItemCount();
+        removeFromCart(9999); // Non-existing product ID
+        const itemCountAfter = getCartItemCount();
+        expect(itemCountAfter).toBe(itemCountBefore);
+      });
     });
   });
 });
