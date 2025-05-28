@@ -58,22 +58,32 @@ describe("Cart", () => {
       const totalValue = getTotalCartValue();
       expect(totalValue).toBe(150); // 100 + 50
     });
+  });
 
-    describe("removeFromCart", () => {
-      test("removeFromCart removes an item from the cart", () => {
-        const product = { id: 1006, name: "Snorkel", price: 200 };
-        addToCart(product);
-        const itemCountBefore = getCartItemCount();
-        removeFromCart(1006); // Assuming removeFromCart takes the product ID
-        const itemCountAfter = getCartItemCount();
-        expect(itemCountAfter).toBe(itemCountBefore - 1);
-      });
-      test("removeFromCart does nothing if the item is not in the cart", () => {
-        const itemCountBefore = getCartItemCount();
-        removeFromCart(9999); // Non-existing product ID
-        const itemCountAfter = getCartItemCount();
-        expect(itemCountAfter).toBe(itemCountBefore);
-      });
+  describe("removeFromCart", () => {
+    test("removeFromCart removes an item from the cart", () => {
+      const product = { id: 1006, name: "Snorkel", price: 200 };
+      addToCart(product);
+      const itemCountBefore = getCartItemCount();
+      removeFromCart(1006); // Assuming removeFromCart takes the product ID
+      const itemCountAfter = getCartItemCount();
+      expect(itemCountAfter).toBe(itemCountBefore - 1);
+    });
+    test("removeFromCart does nothing if the item is not in the cart", () => {
+      const itemCountBefore = getCartItemCount();
+      removeFromCart(9999); // Non-existing product ID
+      const itemCountAfter = getCartItemCount();
+      expect(itemCountAfter).toBe(itemCountBefore);
+    });
+  });
+
+  describe("editCart", () => {
+    test("editCart updates the amount of an item in the cart", () => {
+      const product = { id: 1007, name: "Fotpump", price: 60 };
+      addToCart(product);
+      editCart(1007, { amount: 3 }); // <-- Call the function you want to test
+      const item = getItem(0);
+      expect(item.amount).toBe(3);
     });
   });
 });
