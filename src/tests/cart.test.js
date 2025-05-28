@@ -19,4 +19,12 @@ describe("Cart", () => {
   test("getCartItemCount returns 0 when the cart is empty", () => {
     expect(getCartItemCount()).toBe(0);
   });
+
+  test("addToCart does not add an invalid product to the cart", () => {
+    const itemCountBefore = getCartItemCount();
+    const invalidProduct = { name: "missing id and price" };
+    addToCart(invalidProduct);
+    const itemCountAfter = getCartItemCount();
+    expect(itemCountAfter).toBe(itemCountBefore);
+  });
 });

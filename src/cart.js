@@ -31,9 +31,9 @@ function getCartItemCount() {
 }
 
 function addToCart(newItem) {
-  if (!isProduct(newItem)) {
-    return false;
-  }
+  //   if (!isProduct(newItem)) {
+  //     return false;
+  //   }
 
   const cartItem = { id: idCounter, amount: 1, item: newItem };
   idCounter++;
