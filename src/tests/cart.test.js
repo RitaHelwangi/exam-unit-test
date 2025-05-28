@@ -57,5 +57,16 @@ describe("Cart", () => {
       const totalValue = getTotalCartValue();
       expect(totalValue).toBe(150); // 100 + 50
     });
+
+    describe("removeFromCart", () => {
+      test("removeFromCart removes an item from the cart", () => {
+        const product = { id: 1006, name: "Snorkel", price: 200 };
+        addToCart(product);
+        const itemCountBefore = getCartItemCount();
+        removeFromCart(1006); // Assuming removeFromCart takes the product ID
+        const itemCountAfter = getCartItemCount();
+        expect(itemCountAfter).toBe(itemCountBefore - 1);
+      });
+    });
   });
 });
