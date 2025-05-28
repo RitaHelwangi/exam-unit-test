@@ -22,6 +22,7 @@ describe("Cart", () => {
 
     expect(itemCountAfter).toBe(itemCountBefore + 1);
   });
-
-  // -------------------------------------------------- //
+  test("getCartItemCount returnes 0 when the cart is empty", () => {
+    expect(getCartItemCount()).toBe(0);
+  });
 });
