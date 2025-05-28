@@ -33,14 +33,12 @@ describe("Validation", () => {
   });
   describe("isCartItem", () => {
     test("isCartItem returns true for a valid cart item object", () => {
-      const result = isCartItem(exampleCartObject);
-      expect(result).toBe(true);
+      expect(isCartItem(exampleCartObject)).toBe(true);
     });
 
     test("isCartItem returns false for an invalid cart item object", () => {
       const invalidCartItem = { id: 2001, amount: 1 }; // Missing 'item' property
-      const result = isCartItem(invalidCartItem);
-      expect(result).toBe(false);
+      expect(isCartItem(invalidCartItem)).toBe(false);
     });
 
     test("isCartItem returns false for an invalid product in cart item", () => {
@@ -49,8 +47,7 @@ describe("Validation", () => {
         amount: 1,
         item: { id: 1001, name: "Invalid Product" }, // Missing 'price'
       };
-      const result = isCartItem(invalidCartItem);
-      expect(result).toBe(false);
+      expect(isCartItem(invalidCartItem)).toBe(false);
     });
   });
 });
