@@ -36,5 +36,11 @@ describe("Validation", () => {
       const result = isCartItem(exampleCartObject);
       expect(result).toBe(true);
     });
+
+    test("isCartItem returns false for an invalid cart item object", () => {
+      const invalidCartItem = { id: 2001, amount: 1 }; // Missing 'item' property
+      const result = isCartItem(invalidCartItem);
+      expect(result).toBe(false);
+    });
   });
 });
