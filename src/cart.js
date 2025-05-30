@@ -35,9 +35,14 @@ function addToCart(newItem) {
     return false;
   }
 
-  const cartItem = { id: idCounter, amount: 1, item: newItem };
-  idCounter++;
-  cart.push(cartItem);
+  const index = cart.findIndex((ci) => ci.item.id === newItem.id);
+  if (index === -1) {
+    const cartItem = { id: idCounter, amount: 1, item: newItem };
+    idCounter++;
+    cart.push(cartItem);
+  } else {
+    cart[index].amount++;
+  }
 }
 
 function clearCart() {

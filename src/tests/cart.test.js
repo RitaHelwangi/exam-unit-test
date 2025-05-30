@@ -32,6 +32,15 @@ describe("Cart", () => {
       const itemCountAfter = getCartItemCount();
       expect(itemCountAfter).toBe(itemCountBefore);
     });
+
+    test("addToCart increases amount if product already in cart", () => {
+      const product = { id: 1002, name: "Vattenpistol", price: 40 };
+      addToCart(product);
+      addToCart(product);
+      const item = getItem(0);
+      expect(item.amount).toBe(2);
+      expect(getCartItemCount()).toBe(2); // 2 items in total (amount), but only 1 cart entry
+    });
   });
 
   describe("getCartItemCount", () => {
