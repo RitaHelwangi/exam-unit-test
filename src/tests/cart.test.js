@@ -107,9 +107,20 @@ describe("Cart", () => {
 		test("editCart updates the amount of an item in the cart", () => {
 			const product = { id: 1007, name: "Fotpump", price: 60 };
 			addToCart(product);
-			editCart(1007, { amount: 3 }); // <-- Call the function you want to test
-			const item = getItem(0);
+			editCart(1007, { amount: 3 });
+			let item = getItem(0);
 			expect(item.amount).toBe(3);
+
+			editCart(1007, { amount: 1 }); //change amount again
+			item = getItem(0);
+			expect(item.amount).toBe(1);
+		});
+
+		test("editCart does nothing if product is not in the cart", () => {
+			// Try to edit a product that doesn't exist
+			editCart(9999, { amount: 5 });
+			// Cart should still be empty
+			expect(getCartItemCount()).toBe(0);
 		});
 	});
 });
