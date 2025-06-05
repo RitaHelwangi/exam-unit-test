@@ -25,9 +25,25 @@ describe("Cart", () => {
 			expect(itemCountAfter).toBe(itemCountBefore + 1);
 		});
 		
-		test("addToCart does not add an invalid product to the cart", () => {
+		test("addToCart does not add a product missing id", () => {
 			const itemCountBefore = getCartItemCount();
-			const invalidProduct = { name: "missing id and price" };
+			const invalidProduct = { name: "Vattenpistol", price: 40 };
+			addToCart(invalidProduct);
+			const itemCountAfter = getCartItemCount();
+			expect(itemCountAfter).toBe(itemCountBefore);
+		});
+		
+		test("addToCart does not add a product missing name", () => {
+			const itemCountBefore = getCartItemCount();
+			const invalidProduct = { id: 1002, price: 40 };
+			addToCart(invalidProduct);
+			const itemCountAfter = getCartItemCount();
+			expect(itemCountAfter).toBe(itemCountBefore);
+		});
+		
+		test("addToCart does not add a product missing price", () => {
+			const itemCountBefore = getCartItemCount();
+			const invalidProduct = { id: 1002, name: "Vattenpistol" };
 			addToCart(invalidProduct);
 			const itemCountAfter = getCartItemCount();
 			expect(itemCountAfter).toBe(itemCountBefore);
