@@ -1,17 +1,17 @@
 {
-  "name": "exam-unit-test",
-  "version": "1.0.0",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "test-details": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose"
-  },
-  "keywords": [],
-  "author": "David Andersson",
-  "license": "ISC",
-  "description": "Examination i kurs om testning",
-  "devDependencies": {
-    "jest": "^29.7.0"
-  }
+	"name": "exam-unit-test",
+	"version": "1.0.0",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+		"test-details": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose"
+	},
+	"keywords": [],
+	"author": "David Andersson",
+	"license": "ISC",
+	"description": "Examination i kurs om testning",
+	"devDependencies": {
+		"jest": "^29.7.0"
+	}
 }
